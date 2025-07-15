@@ -63,7 +63,7 @@ Alternatively, you can configure Cursor to run the MCP server in Docker (ensure 
   "mcpServers": {
     "jira-zephyr": {
       "command": "docker",
-      "args": ["run", "--rm", "-i", "jira-zephyr-mcp"],
+      "args": ["run", "--rm", "-i","-e","JIRA_BASE_URL","-e","JIRA_USERNAME","-e","JIRA_API_TOKEN","-e","ZEPHYR_API_TOKEN", "jira-zephyr-mcp"],
       "env": {
         "JIRA_BASE_URL": "https://your-domain.atlassian.net",
         "JIRA_USERNAME": "your-email@company.com",
